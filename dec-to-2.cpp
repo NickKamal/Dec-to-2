@@ -7,11 +7,24 @@ using namespace std;
 int main()
 {
 
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code!"};
-    
-    for (const string& word : msg)
+    int input = 0;
+    cout<<"Enter the number in decimal: ";
+    cin>>input;
+    if(input == 0)
     {
-        cout << word << " ";
+        cout<<"Binary value:: "<<0<<endl;
+        return 0;
     }
-    cout << endl;
+    vector<int> ans;
+    while(input != 0)
+    {
+        ans.push_back(input % 2);
+        input /= 2;
+    }
+    cout<<"Binary value:: ";
+    for(vector<int>::reverse_iterator end = ans.rbegin(); end != ans.crend(); ++end)
+    {
+        cout<<*end;
+    }
+    cout<<endl;
 }
