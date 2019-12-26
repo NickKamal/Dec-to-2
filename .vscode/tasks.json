@@ -1,15 +1,34 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "build dec-to-2",
-        "type": "shell",
-        "command": "g++",
-        "args": ["-g", "-o", "dec-to-2", "dec-to-2.cpp"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
+        {
+            "label": "build dec-to-2",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-o",
+                "dec-to-2",
+                "dec-to-2.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cpp.exe build active file",
+            "command": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\cpp.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin"
+            }
         }
-      }
     ]
-  }
+}
